@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeWars
 {
@@ -7,12 +8,23 @@ namespace CodeWars
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(IsPangram("The quick brown fox jumps over the lazy dog."));       // True
-            Console.WriteLine(IsPangram("ABCDEFGHIJKLMNOPQRSTUVWXYZ"));                         // True
-            Console.WriteLine(IsPangram("aBCDEFGHIJKLMNOPQRSTUVWXYZ"));                         // True
-            Console.WriteLine(IsPangram("BCDEFGHIJKLMNOPQRSTUVWXYZ"));                          // False
-            Console.WriteLine(IsPangram("BCDEFGHIJKLMNOPQRSTUVWXYZa"));                         // True
+            // Console.WriteLine(IsPangram("The quick brown fox jumps over the lazy dog."));       // True
+            // Console.WriteLine(ValidatePin("a234"));
+            
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+        /// If the function is passed a valid PIN string, return true, else return false.
+        /// only numbers; with length of 4 or 6
+        /// </summary>
+        /// <param name="pin"></param>
+        /// <returns></returns>
+        public static bool ValidatePin(string pin)
+        {
+            if ((pin.Length == 4 || pin.Length == 6) && pin.All(char.IsDigit)) return true;
+            else return false;
         }
 
         /// <summary>
