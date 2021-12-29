@@ -10,9 +10,53 @@ namespace CodeWars
         {
             // Console.WriteLine(IsPangram("The quick brown fox jumps over the lazy dog."));       // True
             // Console.WriteLine(ValidatePin("a234"));
-            
+            // Console.WriteLine(DescendingOrder(123456));
+            Console.WriteLine(DescendingOrder(-123456789));
+
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Your task is to make a function that can take any non-negative integer as 
+        /// an argument and return it with its digits in descending order. 
+        /// Essentially, rearrange the digits to create the highest possible number.
+        /// Examples: Input: 42145 Output: 54421
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static int DescendingOrder(int num)
+        {
+            #region negatives control
+            // this don´t make any sense (reverse a negative int ????)
+            // for this function, it was assumed that, if the input is negative, the output will be as well
+            bool negative;
+            if (num.ToString().Contains('-'))
+            {
+                num = int.Parse(num.ToString().Replace("-", String.Empty));
+                negative = true;
+            }
+            else negative = false;
+            #endregion
+
+            List<char> l_numbers = new List<char>();
+            l_numbers.AddRange(num.ToString().ToCharArray());
+
+            List<int> i_numbers = l_numbers.Select(c => int.Parse(c.ToString())).ToList();
+            i_numbers.Sort();
+            i_numbers.Reverse();
+
+            string result = "";
+            foreach (var item in i_numbers) result += item;
+
+            // negative int result
+            if (negative) return int.Parse(result) * -1;
+            // positive int result
+            else return int.Parse(result);
+
+            // clean solution (without consideration on negative integer input argument)
+            // return int.Parse(string.Concat(num.ToString().OrderByDescending(x => x)));
+        }
+
 
         /// <summary>
         /// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.

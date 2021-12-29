@@ -12,6 +12,46 @@ namespace CodeWars.Tests
         {
         }
 
+        #region DescendingOrder
+
+        [Test, Description("Order Descending input int argument!")]
+        public void Test0()
+        {
+            Assert.AreEqual(0, CodeWars.Program.DescendingOrder(0));
+        }
+
+        [Test, Description("Order Descending input int argument!")]
+        public void Test1()
+        {
+            Assert.AreEqual(1, CodeWars.Program.DescendingOrder(1));
+        }
+
+        [Test, Description("Order Descending input int argument!")]
+        public void Test15()
+        {
+            Assert.AreEqual(51, CodeWars.Program.DescendingOrder(15));
+        }
+
+        [Test, Description("Order Descending input int argument!")]
+        public void Test1021()
+        {
+            Assert.AreEqual(2110, CodeWars.Program.DescendingOrder(1021));
+        }
+
+        [Test, Description("Order Descending input int argument!")]
+        public void Test123456789()
+        {
+            Assert.AreEqual(987654321, CodeWars.Program.DescendingOrder(123456789));
+        }
+
+        [Test, Description("Order Descending input int argument!")]
+        public void TestNegatives()
+        {
+            Assert.AreEqual(-987654321, CodeWars.Program.DescendingOrder(-123456789));
+        }
+
+        #endregion
+
         #region ValidatePin
 
         [Test, Description("ValidatePin should return false for pins with length other than 4 or 6")]
@@ -88,19 +128,19 @@ namespace CodeWars.Tests
         #endregion
 
         #region IsPangram
-        [Test]
+        [Test, Description("A pangram is a sentence that contains every single letter of the alphabet at least once")]
         public void test_IsPangram1()
         {
             Assert.AreEqual(true, CodeWars.Program.IsPangram("The quick brown fox jumps over the lazy dog."));
         }
 
-        [Test]
+        [Test, Description("A pangram is a sentence that contains every single letter of the alphabet at least once")]
         public void test_IsPangram2()
         {
             Assert.AreEqual(true, CodeWars.Program.IsPangram("BCDEFGHIJKLMNOPQRSTUVWXYZa"));
         }
 
-        [Test]
+        [Test, Description("A pangram is a sentence that contains every single letter of the alphabet at least once")]
         public void test_IsPangram3()
         {
             Assert.AreEqual(false, CodeWars.Program.IsPangram("BCDEFGHIJKLMNOPQRSTUVWXYZ"));
@@ -123,7 +163,7 @@ namespace CodeWars.Tests
             new object[] {true, "Raw Danger! (Zettai Zetsumei Toshi 2) for the PlayStation 2 is a bit queer, but an alright game I guess, uh... CJ kicks and vexes Tenpenny precariously? This should be a pangram now, probably."},
         }.OrderBy(x => rnd.Next()).ToArray();
 
-        [Test, TestCaseSource("testCases")]
+        [Test, TestCaseSource("testCases"), Description("A pangram is a sentence that contains every single letter of the alphabet at least once")]
         public void test_IsPangram4(bool expected, string str) => Assert.AreEqual(expected, CodeWars.Program.IsPangram(str));
 
         #endregion
