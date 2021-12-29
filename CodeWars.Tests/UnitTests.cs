@@ -12,6 +12,22 @@ namespace CodeWars.Tests
         {
         }
 
+        #region FindSmallestInt
+
+        [Test, Description("Given an array of integers your solution should find the smallest integer.")]
+        public void TestFindSmallestInt1()
+        {
+            Assert.AreEqual(11, CodeWars.Program.FindSmallestInt(args: new int[] { 78, 56, 232, 12, 11, 43 }));
+        }
+
+        [Test, Description("Given an array of integers your solution should find the smallest integer.")]
+        public void TestFindSmallestInt2()
+        {
+            Assert.AreEqual(-33, CodeWars.Program.FindSmallestInt(args: new int[] { 78, 56, -2, 12, 8, -33 }));
+        }
+
+        #endregion
+
         #region MakeNegative
 
         Random r = new Random();

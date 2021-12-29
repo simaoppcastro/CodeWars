@@ -15,17 +15,30 @@ namespace CodeWars
             // Console.WriteLine(MakeNegative(-1));
             // Console.WriteLine(MakeNegative(0));
             // Console.WriteLine(MakeNegative(5));
-
-            Console.WriteLine(FindSmallestInt(new int[] { 78, 56, 232, 12, 11, 43 }));
+            // Console.WriteLine(FindSmallestInt(new int[] { 78, 56, 232, 12, 11, 43 }));
 
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Given an array of integers your solution should find the smallest integer.
+        /// Example: Given [34, -345, -1, 100] your solution will return -345
+        /// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static int FindSmallestInt(int[] args)
         {
-            List<int> result = args.ToList<int>();
-            result.Sort();
-            return result[0];
+            if (args.Length > 0)
+            {
+                List<int> result = args.ToList<int>();
+                result.Sort();
+                return result[0];
+            }
+            else return -1;
+
+            // another simple solution
+            // return args.Min();
         }
 
         /// <summary>
@@ -117,5 +130,6 @@ namespace CodeWars
             if (l_alphabet.Count == 0) return true;
             else return false;
         }
+
     }
 }
