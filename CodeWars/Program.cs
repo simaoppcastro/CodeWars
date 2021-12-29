@@ -11,9 +11,35 @@ namespace CodeWars
             // Console.WriteLine(IsPangram("The quick brown fox jumps over the lazy dog."));       // True
             // Console.WriteLine(ValidatePin("a234"));
             // Console.WriteLine(DescendingOrder(123456));
-            Console.WriteLine(DescendingOrder(-123456789));
+            // Console.WriteLine(DescendingOrder(-123456789));
+            // Console.WriteLine(MakeNegative(-1));
+            // Console.WriteLine(MakeNegative(0));
+            // Console.WriteLine(MakeNegative(5));
+
+            Console.WriteLine(FindSmallestInt(new int[] { 78, 56, 232, 12, 11, 43 }));
 
             Console.ReadKey();
+        }
+
+        public static int FindSmallestInt(int[] args)
+        {
+            List<int> result = args.ToList<int>();
+            result.Sort();
+            return result[0];
+        }
+
+        /// <summary>
+        /// In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static int MakeNegative(int number)
+        {
+            if (number >= 0) return number * -1;
+            else return number;
+
+            // simple solution (one line of code)
+            // return -Math.Abs(number);
         }
 
         /// <summary>

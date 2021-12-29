@@ -12,6 +12,26 @@ namespace CodeWars.Tests
         {
         }
 
+        #region MakeNegative
+
+        Random r = new Random();
+
+        [Test, Description("given a number and have to make it negative. But maybe the number is already negative")]
+        public void RandomPositiveTest()
+        {
+            int number = r.Next(1, 101);
+            Assert.AreEqual(-Math.Abs(number), CodeWars.Program.MakeNegative(number));
+        }
+
+        [Test, Description("given a number and have to make it negative. But maybe the number is already negative")]
+        public void RandomNegativeTest()
+        {
+            int number = r.Next(-100, 0);
+            Assert.AreEqual(-Math.Abs(number), CodeWars.Program.MakeNegative(number));
+        }
+
+        #endregion
+
         #region DescendingOrder
 
         [Test, Description("Order Descending input int argument!")]
