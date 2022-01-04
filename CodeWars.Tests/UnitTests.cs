@@ -12,6 +12,21 @@ namespace CodeWars.Tests
         {
         }
 
+        #region DuplicateCount
+
+        [Test, Description("Count the number of Duplicates.")]
+        public void TestDuplicateCount()
+        {
+            Assert.AreEqual(0, CodeWars.Program.DuplicateCount(""));
+            Assert.AreEqual(0, CodeWars.Program.DuplicateCount("abcde"));
+            Assert.AreEqual(2, CodeWars.Program.DuplicateCount("aabbcde"));
+            Assert.AreEqual(2, CodeWars.Program.DuplicateCount("aabBcde"), "should ignore case");
+            Assert.AreEqual(1, CodeWars.Program.DuplicateCount("Indivisibility"));
+            Assert.AreEqual(2, CodeWars.Program.DuplicateCount("Indivisibilities"), "characters may not be adjacent");
+        }
+
+        #endregion
+
         #region FindSmallestInt
 
         [Test, Description("Given an array of integers your solution should find the smallest integer.")]
@@ -158,7 +173,7 @@ namespace CodeWars.Tests
             "-234567",
             "123/",
             "456:",
-            "9¾9¾",
+            "9?9?",
         };
 
         #endregion

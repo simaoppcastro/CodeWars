@@ -16,8 +16,32 @@ namespace CodeWars
             // Console.WriteLine(MakeNegative(0));
             // Console.WriteLine(MakeNegative(5));
             // Console.WriteLine(FindSmallestInt(new int[] { 78, 56, 232, 12, 11, 43 }));
+            Console.WriteLine(DuplicateCount(str: "aA11"));
+            Console.WriteLine(DuplicateCount(str: "aabBcde"));
+            Console.WriteLine(DuplicateCount(str: "Indivisibilities"));
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static int DuplicateCount(string str)
+        {
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+            int result = 0;
+
+            foreach (var ch in str.ToLower())
+            {
+                if (!dict.ContainsKey(ch)) dict.Add(ch, 1);
+                else dict[ch] += 1;
+            }
+
+            foreach (var item in dict.Values) if (item > 1) result += 1;
+            
+            return result;
         }
 
         /// <summary>
@@ -95,7 +119,6 @@ namespace CodeWars
             // clean solution (without consideration on negative integer input argument)
             // return int.Parse(string.Concat(num.ToString().OrderByDescending(x => x)));
         }
-
 
         /// <summary>
         /// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
