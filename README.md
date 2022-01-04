@@ -1,4 +1,2 @@
-# CodeWars
- CodeWars Solutions
-
-# CodeWars Kata´s Solutions
+# CodeWars 
+CodeWars Kata´s Solutions
