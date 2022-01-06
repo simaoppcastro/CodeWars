@@ -12,6 +12,41 @@ namespace CodeWars.Tests
         {
         }
 
+        #region GetMiddle
+
+        /// <summary>
+        /// helper function to test Method GetMiddle
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string GetMiddleT(string s)
+        {
+            int middle = s.Length / 2;
+            if (s.Length % 2 == 0) return s[middle - 1].ToString() + s[middle].ToString();
+            else return s[middle].ToString();
+        }
+
+        [Test, Description("Return the middle fo the string (random tests).")]
+        public static void TestGetMiddleWithRandomStrings()
+        {
+            string alph = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            Random rnd = new Random();
+
+            for (int i = 0; i < 50; i++)
+            {
+                string randomString = "";
+                int rando = rnd.Next(1, 1000);
+                for (int j = 0; j < rando; j++)
+                {
+                    int n = rnd.Next(0, alph.Length);
+                    randomString += alph[n];
+                }
+                Assert.AreEqual(GetMiddleT(randomString), CodeWars.Program.GetMiddle(randomString));
+            }
+        }
+
+        #endregion
+
         #region DuplicateCount
 
         [Test, Description("Count the number of Duplicates.")]

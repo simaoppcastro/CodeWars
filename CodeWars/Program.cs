@@ -16,15 +16,35 @@ namespace CodeWars
             // Console.WriteLine(MakeNegative(0));
             // Console.WriteLine(MakeNegative(5));
             // Console.WriteLine(FindSmallestInt(new int[] { 78, 56, 232, 12, 11, 43 }));
-            Console.WriteLine(DuplicateCount(str: "aA11"));
-            Console.WriteLine(DuplicateCount(str: "aabBcde"));
-            Console.WriteLine(DuplicateCount(str: "Indivisibilities"));
+            // Console.WriteLine(DuplicateCount(str: "aA11"));
+            // Console.WriteLine(DuplicateCount(str: "aabBcde"));
+            // Console.WriteLine(DuplicateCount(str: "Indivisibilities"));
+
+            Console.WriteLine(GetMiddle(s: "testing"));
+            Console.WriteLine(GetMiddle(s: "middle"));
+            Console.WriteLine(GetMiddle(s: "A"));
 
             Console.ReadKey();
         }
 
         /// <summary>
-        /// 
+        /// You are going to be given a word. Your job is to return the middle character of the word.
+        /// If the word's length is odd, return the middle character.
+        /// If the word's length is even, return the middle 2 characters.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string GetMiddle(string s)
+        {
+            if (s.Length % 2 != 0) return s[s.Length / 2].ToString();
+            else return s[s.Length / 2 - 1].ToString() + s[s.Length / 2].ToString();
+        }
+
+        /// <summary>
+        /// Write a function that will return the count of distinct case-insensitive alphabetic
+        /// characters and numeric digits that occur more than once in the input string.
+        /// The input string can be assumed to contain only alphabets
+        /// (both uppercase and lowercase) and numeric digits.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -42,6 +62,9 @@ namespace CodeWars
             foreach (var item in dict.Values) if (item > 1) result += 1;
             
             return result;
+
+            // simple solution (with Linq)
+            // return str.ToLower().GroupBy(c => c).Count(c => c.Count() > 1);
         }
 
         /// <summary>
