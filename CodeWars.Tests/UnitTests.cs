@@ -12,6 +12,38 @@ namespace CodeWars.Tests
         {
         }
 
+        #region StringEndWith
+
+        /// <summary>
+        /// samples to test caso the method: StringEndWith 
+        /// </summary>
+        private static object[] sampleTestCasesStringEndWith = new object[]
+        {
+          new object[] {"samurai", "ai", true},
+          new object[] {"sumo", "omo", false},
+          new object[] {"ninja", "ja", true},
+          new object[] {"sensei", "i", true},
+          new object[] {"samurai", "ra", false},
+          new object[] {"abc", "abcd", false},
+          new object[] {"abc", "abc", true},
+          new object[] {"abcabc", "bc", true},
+          new object[] {"ails", "fails", false},
+          new object[] {"fails", "ails", true},
+          new object[] {"this", "fails", false},
+          new object[] {"abc", "", true},
+          new object[] {":-)", ":-(", false},
+          new object[] {"!@#$%^&*() :-)", ":-)", true},
+          new object[] {"abc\n", "abc", false},
+        };
+
+        [Test, TestCaseSource("sampleTestCasesStringEndWith"), Description("returns true if the first argument(string) passed in ends with the 2nd argument")]
+        public void TestStringEndWith(string str, string ending, bool expected)
+        {
+            Assert.AreEqual(expected, CodeWars.Program.StringEndWith(str, ending));
+        }
+
+        #endregion
+
         #region GetMiddle
 
         /// <summary>

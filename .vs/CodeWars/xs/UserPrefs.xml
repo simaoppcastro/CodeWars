@@ -1,17 +1,30 @@
 ﻿<Properties StartupConfiguration="{08C2BE32-D3F0-4856-A57C-3BA6DC327F75}|Default">
   <MonoDevelop.Ide.ItemProperties.CodeWars PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeWars.Tests/UnitTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeWars/Program.cs">
     <Files>
-      <File FileName="CodeWars/Program.cs" Line="2" Column="1" />
-      <File FileName="CodeWars.Tests/UnitTests.cs" Line="15" Column="1" />
+      <File FileName="CodeWars/Program.cs" Line="16" Column="47" />
+      <File FileName="CodeWars.Tests/UnitTests.cs" Line="14" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CodeWars" expanded="True">
-            <Node name="CodeWars" expanded="True" />
+            <Node name="CodeWars" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+            <Node name="CodeWars.Tests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="CodeWars" expanded="True">
             <Node name="CodeWars.Tests" expanded="True">
-              <Node name="UnitTests.cs" selected="True" />
+              <Node name="CodeWars.Tests" expanded="True">
+                <Node name="Tests" expanded="True">
+                  <Node name="TestStringEndWith(&quot;!@#$%^&amp;*() :-)&quot;,&quot;:-)&quot;,True)" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

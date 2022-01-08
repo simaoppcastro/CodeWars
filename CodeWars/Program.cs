@@ -19,12 +19,27 @@ namespace CodeWars
             // Console.WriteLine(DuplicateCount(str: "aA11"));
             // Console.WriteLine(DuplicateCount(str: "aabBcde"));
             // Console.WriteLine(DuplicateCount(str: "Indivisibilities"));
-
-            Console.WriteLine(GetMiddle(s: "testing"));
-            Console.WriteLine(GetMiddle(s: "middle"));
-            Console.WriteLine(GetMiddle(s: "A"));
+            // Console.WriteLine(GetMiddle(s: "testing"));
+            // Console.WriteLine(GetMiddle(s: "middle"));
+            // Console.WriteLine(GetMiddle(s: "A"));
+            // Console.WriteLine(StringEndWith("abc", "bc").ToString());
+            // Console.WriteLine(StringEndWith("abc", "d").ToString());
+            // Console.WriteLine(StringEndWith("samurai", "ra").ToString());
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Complete the solution so that it returns true if the first argument(string)
+        /// passed in ends with the 2nd argument (also a string).
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="ending"></param>
+        /// <returns></returns>
+        public static bool StringEndWith(string str, string ending)
+        {
+            // easy solution
+            return str.EndsWith(ending);
         }
 
         /// <summary>
