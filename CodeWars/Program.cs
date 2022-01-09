@@ -26,7 +26,33 @@ namespace CodeWars
             // Console.WriteLine(StringEndWith("abc", "d").ToString());
             // Console.WriteLine(StringEndWith("samurai", "ra").ToString());
 
+            Console.WriteLine(Accum("abcd"));
+
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static String Accum(string s)
+        {
+            String res = "";
+            int j = 0;
+
+            for (int x = 0; x < s.Length; x++)
+            {
+                j += 1;
+                for (int i = 0; i < j; i++)
+                {
+                    if (i == 0) res += s[x].ToString().ToUpper();
+                    else res += s[x].ToString().ToLower();
+                }
+                if (x < s.Length-1) res += "-";
+            }
+
+            return res;
         }
 
         /// <summary>
