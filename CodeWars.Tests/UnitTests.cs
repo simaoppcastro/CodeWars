@@ -12,6 +12,34 @@ namespace CodeWars.Tests
         {
         }
 
+        #region maxPizza
+
+        [Test, Description("Test max slices of pizza by passing number of cuts (Test 1!)")]
+        public void testMaxPizza1()
+        {
+            Assert.AreEqual(2, Program.maxPizza(cut: 1));
+        }
+
+        [Test, Description("Test max slices of pizza by passing number of cuts (Negative test!)")]
+        public void testNegativeMaxPizza()
+        {
+            Assert.AreEqual(-1, Program.maxPizza(-2));
+        }
+
+        [Test, Description("Test max slices of pizza by passing number of cuts (Zero test!)")]
+        public void testZeroMaxPizza()
+        {
+            Assert.AreEqual(1, Program.maxPizza(0));
+        }
+
+        [Test, Description("Test max slices of pizza by passing number of cuts (Test 2!)")]
+        public void testMaxPizza2()
+        {
+            Assert.AreEqual(7, Program.maxPizza(3));
+        }
+
+        #endregion
+
         #region GetSum
 
         [Test, Description("Accum repetitive char´s")]

@@ -26,12 +26,31 @@ namespace CodeWars
             // Console.WriteLine(StringEndWith("abc", "d").ToString());
             // Console.WriteLine(StringEndWith("samurai", "ra").ToString());
             // Console.WriteLine(Accum("abcd"));
-
-            Console.WriteLine(GetSum(a: -1, b: 2).ToString());
-            Console.WriteLine(GetSum(a: 2, b: -1).ToString());
-            Console.WriteLine(GetSum(a: -1, b: -1).ToString());
+            // Console.WriteLine(GetSum(a: -1, b: 2).ToString());
+            // Console.WriteLine(GetSum(a: 2, b: -1).ToString());
+            // Console.WriteLine(GetSum(a: -1, b: -1).ToString());
+            // Console.WriteLine(maxPizza(cut: 1).ToString());
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// In her trip to Italy, Elizabeth Gilbert made it her duty to eat perfect pizza.
+        /// One day, she ordered one for dinner. And then some Italian friends appeared at her room.
+        /// The problem is that there were many people who ask for a piece of pizza at that moment.And she had a knife that only cuts straight.
+        /// Given a number K(K<=45000), help her get the maximum number of pieces possible
+        /// (not necessarily of equal size) with K cuts.If K is a negative number, the result must be -1 (or Nothing in Haskell).
+        /// </summary>
+        /// <param name="cut"></param>
+        /// <returns></returns>
+        public static int maxPizza(int cut)
+        {
+            // cut or K == number of cuts
+
+            // if negative return -1
+            if (cut < 0) return -1;
+            // else
+            return (cut * (cut + 1) / 2) + 1;
         }
 
         /// <summary>
