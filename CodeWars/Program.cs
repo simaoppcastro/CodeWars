@@ -25,14 +25,41 @@ namespace CodeWars
             // Console.WriteLine(StringEndWith("abc", "bc").ToString());
             // Console.WriteLine(StringEndWith("abc", "d").ToString());
             // Console.WriteLine(StringEndWith("samurai", "ra").ToString());
+            // Console.WriteLine(Accum("abcd"));
 
-            Console.WriteLine(Accum("abcd"));
+            Console.WriteLine(GetSum(a: -1, b: 2).ToString());
+            Console.WriteLine(GetSum(a: 2, b: -1).ToString());
+            Console.WriteLine(GetSum(a: -1, b: -1).ToString());
 
             Console.ReadKey();
         }
 
         /// <summary>
-        /// 
+        /// Given two integers a and b, which can be positive or negative,
+        /// find the sum of all the integers between and including them and return it.
+        /// If the two numbers are equal return a or b.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static int GetSum(int a, int b)
+        {
+            int res = 0;
+
+            if(a != b)
+            {
+                if (a > b) for (int i = b; i <= a; i++) res += i;
+                else if (b > a) for (int i = a; i <= b; i++) res += i;
+                return res;
+            }
+            else return a;
+        }
+
+        /// <summary>
+        /// Examples
+        /// accum("abcd") -> "A-Bb-Ccc-Dddd"
+        /// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+        /// accum("cwAt") -> "C-Ww-Aaa-Tttt"
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>

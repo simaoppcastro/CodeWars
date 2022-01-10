@@ -12,9 +12,23 @@ namespace CodeWars.Tests
         {
         }
 
+        #region GetSum
+
+        [Test, Description("Accum repetitive char´s")]
+        public void TestGetSum()
+        {
+            Assert.AreEqual(CodeWars.Program.GetSum(505, 4), 127759);
+            Assert.AreEqual(CodeWars.Program.GetSum(-505, 4), -127755);
+            Assert.AreEqual(CodeWars.Program.GetSum(0, 0), 0);
+            Assert.AreEqual(CodeWars.Program.GetSum(-5, -1), -15);
+            Assert.AreEqual(CodeWars.Program.GetSum(5, 1), 15);
+        }
+
+        #endregion
+
         #region Accum
 
-        [Test, Description("")]
+        [Test, Description("Accum repetitive char´s")]
         public void TestAccum()
         {
             Assert.AreEqual(CodeWars.Program.Accum("ZpglnRxqenU"), "Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
