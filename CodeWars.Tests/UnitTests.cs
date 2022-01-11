@@ -2,6 +2,7 @@ using NUnit.Framework;
 using CodeWars;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace CodeWars.Tests
 {
@@ -11,6 +12,19 @@ namespace CodeWars.Tests
         public void Setup()
         {
         }
+
+        #region Anagrams
+
+        [Test, Description("Test Anagrams!")]
+        public void TestAnagrams()
+        {
+            Assert.AreEqual(new List<string> { "a" }, Program.Anagrams("a", new List<string> { "a", "b", "c", "d" }));
+            Assert.AreEqual(new List<string> { }, Program.Anagrams("big", new List<string> { "gig", "dib", "bid", "biig" }));
+            Assert.AreEqual(new List<string>(), Program.Anagrams("ddddddddddd", new List<string> { "nnnnnnnnnn" }));
+            Assert.AreEqual(new List<string> { "carer", "arcre", "carre" }, Program.Anagrams("racer", new List<string> { "carer", "arcre", "carre", "racrs", "racers", "arceer", "raccer", "carrer", "cerarr" }));
+        }
+
+        #endregion
 
         #region maxPizza
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CodeWars
 {
@@ -31,7 +32,34 @@ namespace CodeWars
             // Console.WriteLine(GetSum(a: -1, b: -1).ToString());
             // Console.WriteLine(maxPizza(cut: 1).ToString());
 
+            Console.WriteLine(Anagrams("racer", new List<string> { "carer", "arcre", "carre", "racrs", "racers", "arceer", "raccer", "carrer", "cerarr" }));
+
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// two words are anagrams of each other if they both contain the same letters
+        /// example: 'abba' & 'bbaa' == true
+        /// example: 'abba' & 'abbba' == false
+        /// example: anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        public static List<string> Anagrams(string word, List<string> words)
+        {
+            // clean input List and make lower chars
+            for (int i = 0; i < words.Count; i++) words[i] = Regex.Replace(words[i], @"[_]+|[^\w]+|[\d-]+", "").ToLower();
+
+            // create output List
+            List<string> res = new List<string>();
+
+            // iterate on every string on List input (words)
+            // order by (sort) the correspondent item and the input word
+            // if item == word -> add the item to the output List
+            foreach (var item in words) if (String.Concat(item.OrderBy(c => c)) == String.Concat(word.OrderBy(c => c))) res.Add(item);
+            
+            return res;
         }
 
         /// <summary>
