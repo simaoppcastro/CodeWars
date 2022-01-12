@@ -31,10 +31,34 @@ namespace CodeWars
             // Console.WriteLine(GetSum(a: 2, b: -1).ToString());
             // Console.WriteLine(GetSum(a: -1, b: -1).ToString());
             // Console.WriteLine(maxPizza(cut: 1).ToString());
+            // Console.WriteLine(Anagrams("racer", new List<string> { "carer", "arcre", "carre", "racrs", "racers", "arceer", "raccer", "carrer", "cerarr" }));
 
-            Console.WriteLine(Anagrams("racer", new List<string> { "carer", "arcre", "carre", "racrs", "racers", "arceer", "raccer", "carrer", "cerarr" }));
+            Console.WriteLine(printDiamond(n: 3));
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns>string</returns>
+        public static string printDiamond(int n)
+        {
+            string res = "";
+            if (n % 2 != 0) return null;
+            else
+            {
+                for (int i = n; i < 0; i--)
+                {
+                    res += "*\n";
+                }
+                for (int j = 0; j < n; j++)
+                {
+                    res += "*\n";
+                }
+                return res;
+            }
         }
 
         /// <summary>
