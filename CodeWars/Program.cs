@@ -45,19 +45,33 @@ namespace CodeWars
         /// <returns>string</returns>
         public static string printDiamond(int n)
         {
-            string res = "";
-            if (n % 2 != 0) return null;
+            
+            if (n % 2 == 0) return null;
             else
             {
-                for (int i = n; i < 0; i--)
+                List<string> res = new List<string>();
+                for (int j = 1; j <= n; j+=2)
                 {
-                    res += "*\n";
+                    if (j == 1) res.Add(" ");
+                    for (int i = 1; i <= j; i++)
+                    {
+                        res.Add("*");
+                    }
+                    if (j != n) res.Add("\n");
                 }
-                for (int j = 0; j < n; j++)
+                string s1 = String.Join("", res.ToArray());
+                res.Clear();
+                for (int j = n; j <= 0; j-=2)
                 {
-                    res += "*\n";
+                    if (j == 1) res.Add(" ");
+                    for (int i = 1; i <= j; i++)
+                    {
+                        res.Add("*");
+                    }
+                    if (j != n) res.Add("\n");
                 }
-                return res;
+                string s2 = String.Join("", res.ToArray());
+                return s1 + s2;
             }
         }
 
